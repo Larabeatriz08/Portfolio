@@ -1,9 +1,7 @@
+import RootLayout from "./layout/RootLayout";
+
 function App() {
-  return (
-    <main>
-      LARA LIMA
-    </main>
-  );
+  return <RootLayout />;
 }
 
 export default App;
