@@ -1,7 +1,21 @@
 export default function Logo() {
   return (
-    <div className="flex h-20 w-20 items-center justify-center rounded-3xl border border-zinc-700 bg-zinc-900 shadow-lg">
-      <span className="text-3xl font-bold text-pink-200">
+    <div
+      className="
+        flex
+        h-24
+        w-24
+        items-center
+        justify-center
+        rounded-[28px]
+        border
+        border-white/10
+        bg-white/5
+        backdrop-blur-sm
+        shadow-2xl
+      "
+    >
+      <span className="text-4xl font-black text-pink-200">
         L
       </span>
     </div>
