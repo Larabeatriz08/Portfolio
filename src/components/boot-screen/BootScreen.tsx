@@ -1,7 +1,13 @@
 import Logo from "../logo";
 import Button from "../ui/Button";
 
-export default function BootScreen() {
+type BootScreenProps = {
+  onEnter: () => void;
+};
+
+export default function BootScreen({
+  onEnter,
+}: BootScreenProps) {
   return (
     <main
       className="
@@ -14,12 +20,12 @@ export default function BootScreen() {
         bg-[#09090B]
       "
     >
-    
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-[#09090B] to-black" />
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(248,180,217,.12),transparent_55%)]" />
 
-    
+      {/* Conteúdo */}
       <section
         className="
           relative
@@ -36,18 +42,10 @@ export default function BootScreen() {
         <Logo />
 
         <span className="text-xs uppercase tracking-[0.45em] text-zinc-500">
-          LARA LIMA
+          LARA LIMA 
         </span>
 
-        <h1
-          className="
-            text-6xl
-            font-extrabold
-            leading-tight
-            tracking-tight
-            text-white
-          "
-        >
+        <h1 className="text-6xl font-extrabold leading-tight tracking-tight text-white">
           Building thoughtful
           <br />
           digital experiences.
@@ -58,7 +56,7 @@ export default function BootScreen() {
           performance and artificial intelligence.
         </p>
 
-        <Button>
+        <Button onClick={onEnter}>
           Enter Workspace →
         </Button>
 
