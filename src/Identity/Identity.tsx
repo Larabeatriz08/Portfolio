@@ -6,7 +6,7 @@ export default function Identity() {
       </h1>
 
       <p className="max-w-xl text-zinc-400">
-        Bem Vindos ao meu Espaço de Trabalho.
+       Welcome to my personal space.
       </p>
     </div>
   );

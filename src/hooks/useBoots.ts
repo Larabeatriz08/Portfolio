@@ -1,14 +1,21 @@
 import { useState } from "react";
 
-export function useBoot() {
-  const [booted, setBooted] = useState(false);
+type Screen = "boot" | "loading" | "desktop";
 
-  const enterWorkspace = () => {
-    setBooted(true);
-  };
+export function useBoot() {
+  const [screen, setScreen] = useState<Screen>("boot");
+
+  function enterWorkspace() {
+    setScreen("loading");
+  }
+
+  function finishLoading() {
+    setScreen("desktop");
+  }
 
   return {
-    booted,
+    screen,
     enterWorkspace,
+    finishLoading,
   };
 }
