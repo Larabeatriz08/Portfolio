@@ -1,9 +1,7 @@
+import RootLayout from "./layout/RootLayout";
+
 function App() {
-  return (
-    <h1 style={{ color: "white", fontSize: "50px" }}>
-      TESTE
-    </h1>
-  );
+  return <RootLayout />;
 }
 
 export default App;
