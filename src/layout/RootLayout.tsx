@@ -1,5 +1,5 @@
 import BootScreen from "../components/boot-screen";
-import Desktop from "../desktop";
+import Desktop from "../components/desktop";
 import { useBoot } from "../hooks/useBoots";
 
 export default function RootLayout() {
