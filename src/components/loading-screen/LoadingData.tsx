@@ -26,6 +26,6 @@ export const loadingSteps: LoadingStepData[] = [
   },
   {
     id: 6,
-    text: "Launching LaraOS..."
+    text: "Launching Lara Operational System..."
   }
 ];
