@@ -1,7 +1,11 @@
 import DesktopIcon from "./DesktopIcon";
 import { desktopApps } from "./apps";
 
-export default function DesktopGrid() {
+type Props = {
+  onOpen: (app: string) => void;
+};
+
+export default function DesktopGrid({ onOpen }: Props) {
   return (
     <section
       className="
@@ -18,6 +22,7 @@ export default function DesktopGrid() {
           key={app.id}
           title={app.title}
           subtitle={app.subtitle}
+          onClick={() => onOpen(app.id)}
         />
       ))}
     </section>

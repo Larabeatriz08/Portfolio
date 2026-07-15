@@ -1,14 +1,17 @@
 type DesktopIconProps = {
   title: string;
   subtitle: string;
+  onClick: () => void;
 };
 
 export default function DesktopIcon({
   title,
   subtitle,
+  onClick,
 }: DesktopIconProps) {
   return (
     <button
+      onClick={onClick}
       className="
         group
         flex

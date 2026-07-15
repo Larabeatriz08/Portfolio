@@ -34,19 +34,19 @@ export default function LoadingScreen({ onFinish }: Props) {
       let next = prev;
 
       if (prev < 15) {
-        next += 2.2;
+        next += 1.2;
       } else if (prev < 40) {
-        next += 1.4;
-      } else if (prev < 70) {
         next += 0.9;
+      } else if (prev < 70) {
+        next += 0.55;
       } else if (prev < 90) {
-        next += 0.45;
+        next += 0.30;
       } else if (prev < 98) {
-        next += 0.18;
+        next += 0.12;
       } else {
-        next += 0.08;
+        next += 0.05;
       }
-
+      
       if (next >= 100) {
         next = 100;
 
@@ -136,8 +136,8 @@ export default function LoadingScreen({ onFinish }: Props) {
         </div>
 
      
-
-        <div
+      <div className="mt-4 h-2 overflow-hidden rounded-full bg-zinc-800">
+        <div 
             className={`
               relative
               h-full
@@ -169,6 +169,7 @@ export default function LoadingScreen({ onFinish }: Props) {
                 animate-pulse
               "
   />
+</div>
 </div>
 
       

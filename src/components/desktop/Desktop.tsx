@@ -1,16 +1,19 @@
+import { useState } from "react";
+
 import Wallpaper from "./Wallpaper";
 import TopBar from "./TopBar";
 import DesktopGrid from "./DesktopGrid";
+import Window from "./Window";
 
 export default function Desktop() {
+  const [openedApp, setOpenedApp] = useState<string | null>(null);
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#09090B]">
       <Wallpaper />
 
-   
       <TopBar />
 
-     
       <section
         className="
           relative
@@ -23,8 +26,15 @@ export default function Desktop() {
           pt-20
         "
       >
-        <DesktopGrid />
+        <DesktopGrid onOpen={setOpenedApp} />
       </section>
+
+      {openedApp && (
+        <Window
+          app={openedApp}
+          onClose={() => setOpenedApp(null)}
+        />
+      )}
     </main>
   );
 }
