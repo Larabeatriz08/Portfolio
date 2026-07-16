@@ -1,6 +1,7 @@
 import FadeIn from "../../components/ui/FadeIn";
 import AnimatedCard from "../../components/ui/AnimatedCard";
 import Typewriter from "../../components/ui/Typewriter";
+import imageProfile from "../../assets/images/imageProfile.jpeg";
 
 export default function About() {
   return (
@@ -55,7 +56,11 @@ export default function About() {
             "
           >
             <span className="text-zinc-500">
-              <img src="./assets/images/imageProfile.jpeg" alt="Lara Beatriz de Sousa Lima" />
+             <img
+              src={imageProfile}
+              alt="Lara Lima"
+              className="h-full w-full rounded-full object-cover"
+            />
             </span>
           </div>
 
