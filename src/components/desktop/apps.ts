@@ -1,6 +1,6 @@
 import type { DesktopApp } from "../../types/desktop";
 
-import Identity from "../../Identity";
+import Identity from "../../apps/Identity";
 import Workspace from "../../Workspace";
 import Lab from "../../Lab";
 import Stack from "../../Stack";
