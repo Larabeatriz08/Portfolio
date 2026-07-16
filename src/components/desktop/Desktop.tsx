@@ -3,7 +3,7 @@ import { useState } from "react";
 import Wallpaper from "./Wallpaper";
 import TopBar from "./TopBar";
 import DesktopGrid from "./DesktopGrid";
-import Window from "./Window";
+import AppWindow from "../window/AppWindow";
 
 export default function Desktop() {
   const [openedApp, setOpenedApp] = useState<string | null>(null);
@@ -30,7 +30,7 @@ export default function Desktop() {
       </section>
 
       {openedApp && (
-        <Window
+        <AppWindow
           app={openedApp}
           onClose={() => setOpenedApp(null)}
         />
