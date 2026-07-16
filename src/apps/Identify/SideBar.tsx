@@ -11,29 +11,29 @@ export default function Sidebar({
   onChange,
 }: Props) {
   return (
-    <aside className="w-64 border-r border-white/10 bg-white/5 backdrop-blur-xl">
+    <aside
+      className="
+      w-64
+      border-r
+      border-white/10
+      bg-[#18181B]
+      p-5
+    "
+    >
+      <h2 className="mb-8 text-lg font-bold text-white">
+        Identify
+      </h2>
 
-      <div className="p-6">
-
-        <h2 className="text-lg font-semibold text-white">
-          Identify
-        </h2>
-
-        <p className="mt-1 text-sm text-zinc-500">
-          About the developer
-        </p>
-
-      </div>
-
-      <nav className="space-y-2 px-4">
-
+      <div className="space-y-2">
         {sections.map((item) => {
           const Icon = item.icon;
+
+          const active = current === item.id;
 
           return (
             <button
               key={item.id}
-              onClick={() => onChange(item.id as IdentifySection)}
+              onClick={() => onChange(item.id)}
               className={`
                 flex
                 w-full
@@ -43,11 +43,12 @@ export default function Sidebar({
                 px-4
                 py-3
                 transition-all
+                duration-300
 
                 ${
-                  current === item.id
-                    ? "bg-pink-400/20 text-pink-300"
-                    : "text-zinc-400 hover:bg-white/5"
+                  active
+                    ? "bg-pink-500 text-white shadow-lg"
+                    : "text-zinc-400 hover:bg-white/5 hover:text-white"
                 }
               `}
             >
@@ -57,8 +58,7 @@ export default function Sidebar({
             </button>
           );
         })}
-      </nav>
-
+      </div>
     </aside>
   );
 }

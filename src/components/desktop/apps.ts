@@ -1,19 +1,19 @@
 import type { DesktopApp } from "../../types/desktop";
 
-import Identity from "../../apps/Identify";
-import Workspace from "../../Workspace";
-import Lab from "../../Lab";
-import Stack from "../../Stack";
-import Contact from "../../Contact";
+import Identify from "../../apps/Identify";
+import Workspace from "../../apps/Workspace";
+import Research from "../../apps/Research";
+import Toolkit from "../../apps/Toolkit";
+import Connect from "../../apps/Connect";
 
 export const desktopApps: DesktopApp[] = [
   {
-    id: "identity",
+    id: "identify",
     title: "Identity",
     subtitle: "About me",
     width: 900,
     height: 650,
-    component: Identity,
+    component: Identify,
   },
   {
     id: "workspace",
@@ -24,27 +24,27 @@ export const desktopApps: DesktopApp[] = [
     component: Workspace,
   },
   {
-    id: "lab",
-    title: "Lab",
+    id: "research",
+    title: "Research",
     subtitle: "Experiments",
     width: 900,
     height: 650,
-    component: Lab,
+    component: Research,
   },
   {
-    id: "stack",
+    id: "toolkit",
     title: "Tech Stack",
     subtitle: "Skills",
     width: 900,
     height: 650,
-    component: Stack,
+    component: Toolkit,
   },
   {
-    id: "contact",
+    id: "connect",
     title: "Contact",
     subtitle: "Let's talk",
     width: 700,
     height: 500,
-    component: Contact,
+    component: Connect,
   },
 ];

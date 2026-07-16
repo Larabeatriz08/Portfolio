@@ -1,6 +1,6 @@
 export type IdentifySection =
   | "about"
-  | "education"
+  | "resume"
   | "experience"
-  | "skills"
-  | "resume";
+  | "education"
+  | "skills";

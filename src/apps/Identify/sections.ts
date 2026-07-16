@@ -1,16 +1,35 @@
+import type { LucideIcon } from "lucide-react";
 import {
   User,
-  GraduationCap,
-  Briefcase,
-  Code2,
   FileText,
+  Briefcase,
+  GraduationCap,
+  Code2,
 } from "lucide-react";
 
-export const sections = [
+import type { IdentifySection } from "./types";
+
+export interface SectionItem {
+  id: IdentifySection;
+  label: string;
+  icon: LucideIcon;
+}
+
+export const sections: SectionItem[] = [
   {
     id: "about",
-    label: "About Me",
+    label: "About",
     icon: User,
+  },
+  {
+    id: "resume",
+    label: "Resume",
+    icon: FileText,
+  },
+  {
+    id: "experience",
+    label: "Career",
+    icon: Briefcase,
   },
   {
     id: "education",
@@ -18,18 +37,8 @@ export const sections = [
     icon: GraduationCap,
   },
   {
-    id: "experience",
-    label: "Experience",
-    icon: Briefcase,
-  },
-  {
     id: "skills",
     label: "Skills",
     icon: Code2,
-  },
-  {
-    id: "resume",
-    label: "Resume",
-    icon: FileText,
   },
 ];
