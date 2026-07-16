@@ -52,7 +52,7 @@ export default function About() {
           </p>
 
           <h3 className="mt-2 text-xl text-white">
-            Python
+            TypeScript
           </h3>
         </div>
 

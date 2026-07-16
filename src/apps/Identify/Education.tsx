@@ -1,7 +1,7 @@
-export default function Resume() {
+export default function Education() {
   return (
     <div className="text-white">
-      Resume
+      Education
     </div>
   );
 }
