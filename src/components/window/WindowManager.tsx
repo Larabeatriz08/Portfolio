@@ -1,4 +1,3 @@
-import { useState } from "react";
 import AppWindow from "./AppWindow";
 
 type WindowManagerProps = {
