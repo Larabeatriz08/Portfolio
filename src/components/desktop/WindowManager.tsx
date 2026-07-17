@@ -1,3 +1,5 @@
+import { AnimatePresence } from "framer-motion";
+
 import Window from "./Window";
 import type { AppId } from "../../types/desktop";
 
@@ -11,14 +13,15 @@ export default function WindowManager({
   closeWindow,
 }: Props) {
   return (
-    <>
-      {openedWindows.map((app) => (
+    <AnimatePresence mode="popLayout">
+      {openedWindows.map((app, index) => (
         <Window
           key={app}
           app={app}
+          zIndex={openedWindows.length - index}
           onClose={() => closeWindow(app)}
         />
       ))}
-    </>
+    </AnimatePresence>
   );
 }

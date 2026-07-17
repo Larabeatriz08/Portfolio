@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useSound } from "../../hooks/useSounds";
 
 type DesktopIconProps = {
@@ -16,7 +17,28 @@ export default function DesktopIcon({
   const { play } = useSound();
 
   return (
-    <button
+    <motion.button
+      initial={{
+        opacity: 0,
+        y: 20,
+        scale: 0.95,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        scale: 1,
+      }}
+      whileHover={{
+        scale: 1.05,
+        y: -8,
+      }}
+      whileTap={{
+        scale: 0.92,
+      }}
+      transition={{
+        duration: 0.25,
+        ease: "easeOut",
+      }}
       onClick={() => {
         play("click", 0.15);
 
@@ -35,11 +57,18 @@ export default function DesktopIcon({
         p-4
         transition-all
         duration-300
-        hover:-translate-y-2
         hover:bg-white/5
       "
     >
-      <div
+      <motion.div
+        animate={{
+          y: [0, -2, 0],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
         className="
           flex
           h-16
@@ -52,18 +81,36 @@ export default function DesktopIcon({
           bg-white/5
           backdrop-blur-sm
           transition-all
+          duration-300
           group-hover:border-pink-300/40
           group-hover:bg-pink-200/10
+          group-hover:shadow-[0_0_25px_rgba(236,72,153,.25)]
         "
       >
-        ✦
-      </div>
+        <motion.span
+          animate={{
+            rotate: [0, 5, -5, 0],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="text-xl"
+        >
+          ✦
+        </motion.span>
+      </motion.div>
 
       <div className="text-center">
-        <h3 className="font-medium text-white">{title}</h3>
+        <h3 className="font-medium text-white transition-colors group-hover:text-pink-300">
+          {title}
+        </h3>
 
-        <p className="text-sm text-zinc-500">{subtitle}</p>
+        <p className="text-sm text-zinc-500 transition-colors group-hover:text-zinc-300">
+          {subtitle}
+        </p>
       </div>
-    </button>
+    </motion.button>
   );
 }
