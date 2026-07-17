@@ -30,9 +30,10 @@ export default function About() {
             </h2>
 
             <p className="mt-8 max-w-2xl leading-8 text-zinc-400">
-              Building modern digital experiences with
-              React, Python, Artificial Intelligence
-              and thoughtful user interfaces.
+                I'm an 18-year-old Software Engineering student at FIAP and an IT
+                Technician graduated from UNASP. I enjoy building modern web
+                applications, designing intuitive user experiences, and exploring
+                Artificial Intelligence to solve real-world problems.
             </p>
 
           </div>
