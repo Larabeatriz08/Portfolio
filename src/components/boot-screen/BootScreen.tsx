@@ -20,12 +20,12 @@ export default function BootScreen({
         bg-[#09090B]
       "
     >
-      {/* Background */}
+      
       <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-[#09090B] to-black" />
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(248,180,217,.12),transparent_55%)]" />
 
-      {/* Conteúdo */}
+    
       <section
         className="
           relative

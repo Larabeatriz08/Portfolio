@@ -1,6 +1,6 @@
-import BootScreen from "../components/boot-screen";
+import BootScreen from "../components/boot-screen/BootScreen";
 import Desktop from "../components/desktop";
-import LoadingScreen from "../components/loading-screen/Index"
+import LoadingScreen from "../components/loading-screen";
 
 import { useBoot } from "../hooks/useBoots";
 
