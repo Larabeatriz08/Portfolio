@@ -1,4 +1,7 @@
 import { X } from "lucide-react";
+import { useSound } from "../../hooks/useSounds";
+
+const { play } = useSound();
 
 import { desktopApps } from "../desktop/apps";
 
@@ -84,14 +87,16 @@ export default function AppWindow({
           </div>
 
           <button
-            onClick={onClose}
+            onClick={() => {
+              play("close");
+              onClose();
+            }}
             className="text-zinc-500 transition hover:text-white"
           >
             <X size={16} />
           </button>
         </header>
 
-        {/* Conteúdo */}
 
         <main className="flex-1 overflow-hidden">
           <Component />

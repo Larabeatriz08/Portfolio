@@ -39,31 +39,73 @@ export default function About() {
 
           
 
-          <div
-            className="
-              flex
-              h-72
-              w-72
-              items-center
-              justify-center
-              rounded-full
-              border
-              border-pink-400/20
-              bg-gradient-to-br
-              from-zinc-800
-              to-zinc-900
-              shadow-[0_0_60px_rgba(236,72,153,.18)]
-            "
-          >
-            <span className="text-zinc-500">
-             <img
-              src={imageProfile}
-              alt="Lara Lima"
-              className="h-full w-full rounded-full object-cover"
-            />
-            </span>
-          </div>
+        <div className="flex flex-1 justify-center">
 
+  <div
+    className="
+      relative
+      h-80
+      w-80
+    "
+  >
+
+   
+
+    <div
+      className="
+        absolute
+        inset-0
+        rounded-full
+        bg-pink-500/20
+        blur-3xl
+      "
+    />
+
+
+    <div
+      className="
+        absolute
+        inset-0
+        overflow-hidden
+        rounded-full
+        border
+        border-pink-400/20
+        bg-zinc-900
+        shadow-[0_0_70px_rgba(236,72,153,.18)]
+      "
+    >
+
+      <img
+        src={imageProfile}
+        alt="Lara Lima"
+        className="
+          h-full
+          w-full
+          object-cover
+        "
+      />
+
+    </div>
+
+    
+
+    <div
+      className="
+        absolute
+        bottom-6
+        right-6
+        h-5
+        w-5
+        rounded-full
+        border-4
+        border-zinc-900
+        bg-green-400
+      "
+    />
+
+  </div>
+
+</div>
         </section>
       </FadeIn>
 

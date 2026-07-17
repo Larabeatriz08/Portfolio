@@ -4,9 +4,17 @@ import Wallpaper from "./Wallpaper";
 import TopBar from "./TopBar";
 import DesktopGrid from "./DesktopGrid";
 import AppWindow from "../window/AppWindow";
+import { useSound } from "../../hooks/useSounds";
 
 export default function Desktop() {
   const [openedApp, setOpenedApp] = useState<string | null>(null);
+
+  const { play } = useSound();
+
+  function handleOpen(app: string) {
+    play("open");
+    setOpenedApp(app);
+  }
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#09090B]">
@@ -26,7 +34,7 @@ export default function Desktop() {
           pt-20
         "
       >
-        <DesktopGrid onOpen={setOpenedApp} />
+        <DesktopGrid onOpen={handleOpen} />
       </section>
 
       {openedApp && (

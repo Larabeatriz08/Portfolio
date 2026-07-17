@@ -2,7 +2,7 @@ import DesktopIcon from "./DesktopIcon";
 import { desktopApps } from "./apps";
 
 type Props = {
-  onOpen: (app: string) => void;
+  onOpen: (id: string) => void;
 };
 
 export default function DesktopGrid({ onOpen }: Props) {
@@ -18,11 +18,12 @@ export default function DesktopGrid({ onOpen }: Props) {
       "
     >
       {desktopApps.map((app) => (
-        <DesktopIcon
+        <DesktopIcon 
           key={app.id}
+          id={app.id}
           title={app.title}
           subtitle={app.subtitle}
-          onClick={() => onOpen(app.id)}
+          onOpen={onOpen}
         />
       ))}
     </section>

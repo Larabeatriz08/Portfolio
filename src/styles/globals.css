@@ -26,3 +26,22 @@ a {
   color: inherit;
   text-decoration: none;
 }
+@keyframes cursorBlink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  50%,
+  95% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.cursor-blink {
+  animation: cursorBlink 1s infinite;
+}

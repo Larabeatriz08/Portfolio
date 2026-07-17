@@ -31,9 +31,20 @@ export default function Typewriter({
     <>
       {displayed}
 
-      <span className="animate-pulse text-pink-400">
-        |
-      </span>
+          <span
+      className="
+        ml-1
+        inline-block
+        h-[1em]
+        w-[2px]
+        rounded-full
+        bg-gradient-to-b
+        from-pink-200
+        to-pink-500
+        cursor-blink
+        align-middle
+      "
+    />
     </>
   );
 }

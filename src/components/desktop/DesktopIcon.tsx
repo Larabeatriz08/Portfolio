@@ -1,17 +1,29 @@
+import { useSound } from "../../hooks/useSounds";
+
 type DesktopIconProps = {
+  id: string;
   title: string;
   subtitle: string;
-  onClick: () => void;
+  onOpen: (id: string) => void;
 };
 
 export default function DesktopIcon({
+  id,
   title,
   subtitle,
-  onClick,
+  onOpen,
 }: DesktopIconProps) {
+  const { play } = useSound();
+
   return (
     <button
-      onClick={onClick}
+      onClick={() => {
+        play("click", 0.15);
+
+        setTimeout(() => {
+          onOpen(id);
+        }, 90);
+      }}
       className="
         group
         flex
