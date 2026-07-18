@@ -4,16 +4,35 @@ import Wallpaper from "./Wallpaper";
 import TopBar from "./TopBar";
 import DesktopGrid from "./DesktopGrid";
 import AppWindow from "../window/AppWindow";
+
 import { useSound } from "../../hooks/useSounds";
+import type { AppId } from "../../types/desktop";
 
 export default function Desktop() {
-  const [openedApp, setOpenedApp] = useState<string | null>(null);
-
   const { play } = useSound();
 
-  function handleOpen(app: string) {
+  const [openedWindows, setOpenedWindows] = useState<AppId[]>([]);
+
+  function handleOpen(id: string) {
+    const app = id as AppId;
+
     play("open");
-    setOpenedApp(app);
+
+    setOpenedWindows((current) => {
+      if (current.includes(app)) {
+        return current;
+      }
+
+      return [...current, app];
+    });
+  }
+
+  function handleClose(app: AppId) {
+    play("close");
+
+    setOpenedWindows((current) =>
+      current.filter((window) => window !== app)
+    );
   }
 
   return (
@@ -37,12 +56,14 @@ export default function Desktop() {
         <DesktopGrid onOpen={handleOpen} />
       </section>
 
-      {openedApp && (
+      {openedWindows.map((app, index) => (
         <AppWindow
-          app={openedApp}
-          onClose={() => setOpenedApp(null)}
+          key={app}
+          app={app}
+          zIndex={100 + index}
+          onClose={() => handleClose(app)}
         />
-      )}
+      ))}
     </main>
   );
 }
