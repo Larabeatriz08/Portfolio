@@ -10,7 +10,8 @@ import type { AppId } from "../../types/desktop";
 export default function Desktop() {
   const [openedWindows, setOpenedWindows] = useState<AppId[]>([]);
 
-  function handleOpen(app: AppId) {
+  function handleOpen(id: string) {
+    const app = id as AppId;
     setOpenedWindows((prev) => {
       if (prev.includes(app)) return prev;
       return [...prev, app];
