@@ -11,29 +11,6 @@ import type { AppId } from "../../types/desktop";
 export default function Desktop() {
   const { play } = useSound();
 
-  const [openedWindows, setOpenedWindows] = useState<AppId[]>([]);
-
-  function handleOpen(id: string) {
-    const app = id as AppId;
-
-    play("open");
-
-    setOpenedWindows((current) => {
-      if (current.includes(app)) {
-        return current;
-      }
-
-      return [...current, app];
-    });
-  }
-
-  function handleClose(app: AppId) {
-    play("close");
-
-    setOpenedWindows((current) =>
-      current.filter((window) => window !== app)
-    );
-  }
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#09090B]">
