@@ -10,7 +10,7 @@ export default function About() {
       <FadeIn>
         <section className="flex flex-col-reverse items-center gap-16 lg:flex-row">
 
-          {/* Texto */}
+      
 
           <div className="flex-1 max-w-3xl">
 
@@ -33,11 +33,13 @@ export default function About() {
               <Typewriter
                 text="Hello, I'm Lara Beatriz de Sousa Lima."
                 speed={55}
+                sound = {true}
               />
             </h1>
 
             <h2 className="mt-6 text-2xl text-zinc-300">
-              Software Engineer in the Making
+               Software Engineering Student • Full Stack Developer
+
             </h2>
 
             <div className="mt-6 flex items-center gap-3">
@@ -74,7 +76,7 @@ export default function About() {
 
           </div>
 
-          {/* Foto */}
+     
 
           <div className="flex flex-1 justify-center">
 
@@ -131,7 +133,7 @@ export default function About() {
 
       </FadeIn>
 
-      {/* Cards */}
+
 
       <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
 

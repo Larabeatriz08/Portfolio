@@ -5,12 +5,23 @@ import TopBar from "./TopBar";
 import DesktopGrid from "./DesktopGrid";
 import AppWindow from "../window/AppWindow";
 
-import { useSound } from "../../hooks/useSounds";
 import type { AppId } from "../../types/desktop";
 
 export default function Desktop() {
-  const { play } = useSound();
+  const [openedWindows, setOpenedWindows] = useState<AppId[]>([]);
 
+  function handleOpen(app: AppId) {
+    setOpenedWindows((prev) => {
+      if (prev.includes(app)) return prev;
+      return [...prev, app];
+    });
+  }
+
+  function handleClose(app: AppId) {
+    setOpenedWindows((prev) =>
+      prev.filter((window) => window !== app)
+    );
+  }
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#09090B]">
@@ -18,7 +29,7 @@ export default function Desktop() {
 
       <TopBar />
 
-     <section
+      <section
         className="
           relative
           z-10
@@ -33,7 +44,7 @@ export default function Desktop() {
         {openedWindows.length === 0 && (
           <DesktopGrid onOpen={handleOpen} />
         )}
-</section>
+      </section>
 
       {openedWindows.map((app, index) => (
         <AppWindow
