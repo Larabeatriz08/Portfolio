@@ -14,7 +14,7 @@ export default function DesktopIcon({
   subtitle,
   onOpen,
 }: DesktopIconProps) {
-  const { play } = useSound();
+  const { playClick } = useSound();
 
   return (
     <motion.button
@@ -40,7 +40,7 @@ export default function DesktopIcon({
         ease: "easeOut",
       }}
       onClick={() => {
-        play("click", 0.15);
+        playClick(0.15);
 
         setTimeout(() => {
           onOpen(id);

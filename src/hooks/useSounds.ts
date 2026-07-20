@@ -10,16 +10,25 @@ export function useSound() {
     clickAudio.play().catch(() => {});
   }
 
-  function createTypingAudio(volume = 0.05) {
+  function playTyping(volume = 0.05) {
     const audio = new Audio(typingSound);
 
     audio.volume = volume;
 
-    return audio;
+    audio.currentTime = 0;
+
+    audio.play().catch(() => {});
+
+   
+
+    setTimeout(() => {
+      audio.pause();
+      audio.remove();
+    }, 35);
   }
 
   return {
     playClick,
-    createTypingAudio,
+    playTyping,
   };
 }

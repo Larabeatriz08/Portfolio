@@ -42,7 +42,7 @@ export default function Connect() {
             <div className="h-3 w-3 rounded-full bg-green-400 animate-pulse" />
 
             <span className="text-sm text-green-300">
-              Available for Software Engineering Internships
+              Available for Techonology Internships
             </span>
 
           </div>
@@ -51,7 +51,6 @@ export default function Connect() {
 
       </FadeIn>
 
-      {/* Contact Cards */}
 
       <section className="grid gap-6 md:grid-cols-2">
 
@@ -147,7 +146,7 @@ export default function Connect() {
 
       </section>
 
-      {/* CTA */}
+      
 
       <FadeIn>
 
@@ -206,7 +205,7 @@ export default function Connect() {
 
       </FadeIn>
 
-      {/* Footer */}
+   
 
       <p className="text-center text-sm tracking-[.3em] uppercase text-zinc-600">
         Always Learning • Always Building • Always Creating

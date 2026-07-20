@@ -33,7 +33,6 @@ export default function About() {
               <Typewriter
                 text="Hello, I'm Lara Beatriz de Sousa Lima."
                 speed={55}
-                sound = {true}
               />
             </h1>
 

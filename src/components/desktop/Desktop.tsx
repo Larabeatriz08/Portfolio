@@ -12,6 +12,7 @@ export default function Desktop() {
 
   function handleOpen(id: string) {
     const app = id as AppId;
+
     setOpenedWindows((prev) => {
       if (prev.includes(app)) return prev;
       return [...prev, app];

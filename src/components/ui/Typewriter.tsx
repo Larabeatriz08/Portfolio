@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSound } from "../../hooks/useSounds";
 
 type Props = {
   text: string;
@@ -11,6 +12,8 @@ export default function Typewriter({
 }: Props) {
   const [displayed, setDisplayed] = useState("");
 
+  const { playTyping } = useSound();
+
   useEffect(() => {
     let index = 0;
 
@@ -20,6 +23,17 @@ export default function Typewriter({
       index++;
 
       setDisplayed(text.slice(0, index));
+
+      const currentChar = text[index - 1];
+
+      if (
+        currentChar &&
+        currentChar !== " " &&
+        currentChar !== "." &&
+        currentChar !== ","
+      ) {
+        playTyping(0.05);
+      }
 
       if (index >= text.length) {
         clearInterval(interval);

@@ -1,6 +1,5 @@
 import { X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useSound } from "../../hooks/useSounds";
 import { desktopApps } from "../desktop/apps";
 import type { AppId } from "../../types/desktop";
 
@@ -15,8 +14,6 @@ export default function AppWindow({
   zIndex,
   onClose,
 }: Props) {
-  const { play } = useSound();
-
   const currentApp = desktopApps.find(
     (item) => item.id === app
   );
@@ -42,7 +39,7 @@ export default function AppWindow({
           justify-center
           bg-black/40
           backdrop-blur-sm
-          p-6
+          pointer-events-none
         "
       >
         <motion.div
@@ -66,6 +63,7 @@ export default function AppWindow({
             ease: [0.22, 1, 0.36, 1],
           }}
           className="
+            pointer-events-auto
             flex
             h-[88vh]
             w-[92vw]
@@ -80,33 +78,32 @@ export default function AppWindow({
             shadow-[0_40px_120px_rgba(0,0,0,.55)]
           "
         >
-       
+    
 
           <header
             className="
               flex
               h-14
+              shrink-0
               items-center
               justify-between
               border-b
               border-white/10
               bg-[#18181B]
               px-5
+              select-none
             "
           >
             <div className="flex items-center gap-4">
               <div className="flex gap-2">
                 <button
-                  onClick={() => {
-                    play("close");
-                    onClose();
-                  }}
-                  className="h-3 w-3 rounded-full bg-red-500 hover:scale-110 transition"
+                  onClick={onClose}
+                  className="h-3 w-3 rounded-full bg-red-500 transition hover:scale-110"
                 />
 
-                <button className="h-3 w-3 rounded-full bg-yellow-500 hover:scale-110 transition" />
+                <button className="h-3 w-3 rounded-full bg-yellow-500 transition hover:scale-110" />
 
-                <button className="h-3 w-3 rounded-full bg-green-500 hover:scale-110 transition" />
+                <button className="h-3 w-3 rounded-full bg-green-500 transition hover:scale-110" />
               </div>
 
               <span className="text-sm font-medium text-zinc-300">
@@ -115,10 +112,7 @@ export default function AppWindow({
             </div>
 
             <button
-              onClick={() => {
-                play("close");
-                onClose();
-              }}
+              onClick={onClose}
               className="
                 rounded-lg
                 p-2
@@ -132,13 +126,13 @@ export default function AppWindow({
             </button>
           </header>
 
-       
+          
 
           <div
             className="
               flex-1
               overflow-y-auto
-              overflow-x-hidden
+              overflow-hidden
             "
           >
             <Component />
