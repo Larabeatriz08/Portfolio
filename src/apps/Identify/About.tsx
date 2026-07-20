@@ -143,7 +143,7 @@ export default function About() {
             </p>
 
             <h2 className="mt-4 text-5xl font-black text-white">
-              8
+              5
             </h2>
 
           </div>
@@ -157,7 +157,7 @@ export default function About() {
             </p>
 
             <h2 className="mt-4 text-5xl font-black text-white">
-              15+
+              6+
             </h2>
 
           </div>

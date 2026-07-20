@@ -41,7 +41,7 @@ export default function Desktop() {
 
       <TopBar />
 
-      <section
+     <section
         className="
           relative
           z-10
@@ -53,8 +53,10 @@ export default function Desktop() {
           pt-20
         "
       >
-        <DesktopGrid onOpen={handleOpen} />
-      </section>
+        {openedWindows.length === 0 && (
+          <DesktopGrid onOpen={handleOpen} />
+        )}
+</section>
 
       {openedWindows.map((app, index) => (
         <AppWindow

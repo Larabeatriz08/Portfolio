@@ -32,46 +32,40 @@ export default function AppWindow({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
+        style={{ zIndex }}
         className="
           fixed
           inset-0
+          z-50
           flex
           items-center
           justify-center
+          bg-black/40
           backdrop-blur-sm
-          pointer-events-none
+          p-6
         "
       >
         <motion.div
-          drag
-          dragListener={false}
-          dragMomentum={false}
-          dragElastic={0.08}
-          style={{ zIndex }}
           initial={{
             opacity: 0,
-            scale: 0.9,
-            y: 40,
-            filter: "blur(10px)",
+            scale: 0.92,
+            y: 30,
           }}
           animate={{
             opacity: 1,
             scale: 1,
             y: 0,
-            filter: "blur(0px)",
           }}
           exit={{
             opacity: 0,
-            scale: 0.94,
-            y: 25,
-            filter: "blur(8px)",
+            scale: 0.95,
+            y: 20,
           }}
           transition={{
-            duration: 0.28,
+            duration: 0.25,
             ease: [0.22, 1, 0.36, 1],
           }}
           className="
-            pointer-events-auto
             flex
             h-[88vh]
             w-[92vw]
@@ -86,15 +80,9 @@ export default function AppWindow({
             shadow-[0_40px_120px_rgba(0,0,0,.55)]
           "
         >
-          <motion.header
-            drag
-            dragConstraints={{
-              left: -2000,
-              right: 2000,
-              top: -2000,
-              bottom: 2000,
-            }}
-            dragMomentum={false}
+       
+
+          <header
             className="
               flex
               h-14
@@ -104,9 +92,6 @@ export default function AppWindow({
               border-white/10
               bg-[#18181B]
               px-5
-              cursor-grab
-              active:cursor-grabbing
-              select-none
             "
           >
             <div className="flex items-center gap-4">
@@ -116,16 +101,12 @@ export default function AppWindow({
                     play("close");
                     onClose();
                   }}
-                  className="h-3 w-3 rounded-full bg-red-500 transition hover:scale-110"
+                  className="h-3 w-3 rounded-full bg-red-500 hover:scale-110 transition"
                 />
 
-                <button
-                  className="h-3 w-3 rounded-full bg-yellow-500 transition hover:scale-110"
-                />
+                <button className="h-3 w-3 rounded-full bg-yellow-500 hover:scale-110 transition" />
 
-                <button
-                  className="h-3 w-3 rounded-full bg-green-500 transition hover:scale-110"
-                />
+                <button className="h-3 w-3 rounded-full bg-green-500 hover:scale-110 transition" />
               </div>
 
               <span className="text-sm font-medium text-zinc-300">
@@ -140,27 +121,28 @@ export default function AppWindow({
               }}
               className="
                 rounded-lg
-                p-1
+                p-2
                 text-zinc-500
                 transition
                 hover:bg-white/5
                 hover:text-white
               "
             >
-              <X size={16} />
+              <X size={18} />
             </button>
-          </motion.header>
+          </header>
 
-          <main
+       
+
+          <div
             className="
               flex-1
               overflow-y-auto
               overflow-x-hidden
-              bg-[#111113]
             "
           >
             <Component />
-          </main>
+          </div>
         </motion.div>
       </motion.div>
     </AnimatePresence>
